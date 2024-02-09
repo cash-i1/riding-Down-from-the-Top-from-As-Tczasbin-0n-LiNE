@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://duqbe7kt1vfbe"]
+
+[ext_resource type="Texture2D" uid="uid://c0dcl0h3ds3ws" path="res://assets/tczasbin/body.png" id="1_u4uk6"]
+[ext_resource type="Texture2D" uid="uid://c2nt4uuwjc0hl" path="res://assets/tczasbin/sled.png" id="2_t6eqa"]
+[ext_resource type="Texture2D" uid="uid://clqyip8it4m8a" path="res://assets/tczasbin/leg.png" id="3_x5yy4"]
+[ext_resource type="Texture2D" uid="uid://bvmndop57deew" path="res://assets/tczasbin/arm.png" id="4_05gb0"]
+
+[node name="player" type="CharacterBody2D"]
+
+[node name="body_parts" type="Node2D" parent="."]
+
+[node name="body" type="RigidBody2D" parent="body_parts"]
+position = Vector2(-8, -235)
+
+[node name="body_sprite" type="Sprite2D" parent="body_parts/body"]
+texture = ExtResource("1_u4uk6")
+
+[node name="body_collision" type="CollisionPolygon2D" parent="body_parts/body"]
+polygon = PackedVector2Array(53, -154, 68, -140, 64, -108, 87, -92, 82, -78, 63, -67, 75, -35, 91, -24, 85, 3, 57, 10, 42, 14, 34, 201, -86, 192, -69, -82, -89, -86, -78, -128, -26, -162, -2, -171, -30, -187, -19, -202, 11, -201, 20, -181, 11, -172)
+
+[node name="sled" type="RigidBody2D" parent="body_parts"]
+
+[node name="sled_sprite" type="Sprite2D" parent="body_parts/sled"]
+texture = ExtResource("2_t6eqa")
+
+[node name="sled_collision" type="CollisionPolygon2D" parent="body_parts/sled"]
+polygon = PackedVector2Array(-228, -38, -57, -36, 57, -44, 119, -100, 180, -96, 219, -61, 227, 39, 144, 77, -18, 93, -161, 96, -212, 103)
+
+[node name="leg" type="RigidBody2D" parent="body_parts"]
+position = Vector2(53, -39)
+
+[node name="leg_sprite" type="Sprite2D" parent="body_parts/leg"]
+texture = ExtResource("3_x5yy4")
+
+[node name="leg_collision" type="CollisionPolygon2D" parent="body_parts/leg"]
+polygon = PackedVector2Array(-64, -73, -33, -58, 14, -18, 49, 23, 107, 24, 69, 75, -106, -70)
+
+[node name="arm" type="RigidBody2D" parent="body_parts"]
+position = Vector2(67, -168)
+
+[node name="arm_sprite" type="Sprite2D" parent="body_parts/arm"]
+texture = ExtResource("4_05gb0")
+
+[node name="arm_collision" type="CollisionPolygon2D" parent="body_parts/arm"]
+polygon = PackedVector2Array(-34, -72, 15, -27, 53, 23, 78, 29, 86, 73, 58, 91, -7, 40, -56, -7, -83, -60, -78, -94)
+
+[node name="joints" type="Node2D" parent="body_parts"]
+
+[node name="arm_body" type="PinJoint2D" parent="body_parts/joints"]
+node_a = NodePath("../../arm")
+node_b = NodePath("../../body")

@@ -8,7 +8,6 @@ size = Vector2(838, 164)
 [node name="main" type="Node2D"]
 
 [node name="background" type="ColorRect" parent="."]
-visible = false
 offset_right = 1169.0
 offset_bottom = 670.0
 size_flags_horizontal = 4
@@ -21,6 +20,9 @@ position = Vector2(492, 126)
 
 [node name="ui" type="CanvasLayer" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+rotation = 0.13355
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(535, 388)
 shape = SubResource("RectangleShape2D_yn8ki")
