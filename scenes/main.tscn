@@ -1,13 +1,26 @@
-[gd_scene format=3 uid="uid://cx7spl32n1j48"]
+[gd_scene load_steps=3 format=3 uid="uid://cx7spl32n1j48"]
+
+[ext_resource type="PackedScene" uid="uid://duti1f77wrshf" path="res://scenes/player.tscn" id="1_liy1i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yn8ki"]
+size = Vector2(838, 164)
 
 [node name="main" type="Node2D"]
 
 [node name="background" type="ColorRect" parent="."]
+visible = false
 offset_right = 1169.0
 offset_bottom = 670.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[node name="player" parent="." instance=ExtResource("1_liy1i")]
+position = Vector2(492, 126)
+
 [node name="objects" type="Node2D" parent="."]
 
 [node name="ui" type="CanvasLayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(535, 388)
+shape = SubResource("RectangleShape2D_yn8ki")
