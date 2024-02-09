@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cx7spl32n1j48"]
+
+[node name="main" type="Node2D"]
+
+[node name="background" type="ColorRect" parent="."]
+offset_right = 1169.0
+offset_bottom = 670.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="objects" type="Node2D" parent="."]
+
+[node name="ui" type="CanvasLayer" parent="."]
