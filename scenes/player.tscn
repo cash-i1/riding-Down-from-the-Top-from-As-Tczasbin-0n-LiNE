@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://duti1f77wrshf"]
+
+[ext_resource type="Texture2D" uid="uid://bvmndop57deew" path="res://assets/tczasbin/arm.png" id="1_1jqkw"]
+[ext_resource type="Texture2D" uid="uid://c0dcl0h3ds3ws" path="res://assets/tczasbin/body.png" id="2_wplg6"]
+[ext_resource type="Texture2D" uid="uid://clqyip8it4m8a" path="res://assets/tczasbin/leg.png" id="3_ol3ey"]
+[ext_resource type="Texture2D" uid="uid://c2nt4uuwjc0hl" path="res://assets/tczasbin/sled.png" id="4_lnkm5"]
+
+[node name="player" type="CharacterBody2D"]
+
+[node name="body_parts" type="Node2D" parent="."]
+
+[node name="arm" type="Sprite2D" parent="body_parts"]
+position = Vector2(67, -152)
+texture = ExtResource("1_1jqkw")
+
+[node name="body" type="Sprite2D" parent="body_parts"]
+position = Vector2(0, -219)
+texture = ExtResource("2_wplg6")
+
+[node name="leg" type="Sprite2D" parent="body_parts"]
+position = Vector2(58, -16)
+texture = ExtResource("3_ol3ey")
+
+[node name="sled" type="Sprite2D" parent="body_parts"]
+texture = ExtResource("4_lnkm5")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+
+[node name="torso" type="Bone2D" parent="Skeleton2D"]
